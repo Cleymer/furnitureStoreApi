@@ -25,7 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::middleware('auth:sanctum')->group(function(){
     Route::apiResource('mueble', MuebleController::class)->only('store', 'update', 'destroy');
     Route::apiResource('category', CategoryController::class)->only('store', 'update', 'destroy');
-    Route::get('logout', [AuthController::class], 'logout');
+    Route::get('logout', [AuthController::class, 'logout']);
 });
 
 
